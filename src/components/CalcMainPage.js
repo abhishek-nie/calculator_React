@@ -41,25 +41,41 @@ class CalcMainPage extends Component {
             result: this.state.helperValue + e.target.name
         })
         if (lItem === "+" || lItem === "-" || lItem === "*" || lItem === "/") {
-            this.setState({
-                result: eval(str),
-                helperValue: ''
-            })
-            tempArry.push(String(eval(str)))
-            tempArry.push(e.target.name)
-            this.setState({
-                aItemsToCalculate: tempArry
-            })
+            try{
+                this.setState({
+                    result: eval(str),
+                    helperValue: ''
+                })
+                tempArry.push(String(eval(str)))
+                tempArry.push(e.target.name)
+                this.setState({
+                    aItemsToCalculate: tempArry
+                })
+            }
+            catch(err){
+                this.setState({
+                    result: err.message + " Error! Clear the input"
+                })
+            }
+      
         }
         else if (lItem === "=") {
-            this.setState({
-                result: eval(str),
-                helperValue: ''
-            })
-            tempArry.push(String(eval(str)))
-            this.setState({
-                aItemsToCalculate: tempArry
-            })
+            try{
+                this.setState({
+                    result: eval(str),
+                    helperValue: ''
+                })
+                tempArry.push(String(eval(str)))
+                this.setState({
+                    aItemsToCalculate: tempArry
+                })
+            }
+            catch(err){
+                this.setState({
+                    result: err.message + " Error! Clear the input"
+                })
+            }
+           
         }
     }
 
