@@ -26,7 +26,6 @@ class CalcMainPage extends Component {
     clickItem = e => {
         this.setState({
             aItemsToCalculate: [...this.state.aItemsToCalculate, e.target.name],
-
         })
         var lItem = e.target.name;
         var str = ''
@@ -38,7 +37,6 @@ class CalcMainPage extends Component {
             helperValue: this.state.helperValue + e.target.name,
             result: this.state.helperValue + e.target.name
         })
-
         if (lItem === "+" || lItem === "-" || lItem === "*" || lItem === "/") {
             this.setState({
                 result: eval(str),
@@ -62,7 +60,6 @@ class CalcMainPage extends Component {
         }
     }
 
-
     // This method clear all the inputs , reset the values ,reset calculation till now and gives a fresh start
     clearAllInputs = () => {
         this.setState({
@@ -71,7 +68,6 @@ class CalcMainPage extends Component {
             aItemsToCalculate: []
         })
     }
-
 
     //Button to change theme to DARK MODE
     changeToDarkMode = () => {
@@ -120,20 +116,22 @@ class CalcMainPage extends Component {
             result: changeSign
         })
      }else{
-        var lastItem = this.state.aItemsToCalculate.pop()
-        var changeSign = String(Math.abs(this.state.result))
+        lastItem = this.state.aItemsToCalculate.pop()
+        changeSign = String(Math.abs(this.state.result))
         this.setState({
            aItemsToCalculate: [...this.state.aItemsToCalculate, changeSign],
            result: changeSign
        })
      }
     }
+
     //This method helps to hide/Unhide the square-root btn, square btn and sign-btn
     onPressScientificBtn = () => {
         this.setState({
             scientificBtn: "scientificBtnShow"
         })
     }
+
     render() {
         return (
             <div className={this.state.classBackGroundTheme}>
@@ -141,7 +139,6 @@ class CalcMainPage extends Component {
                     <Output className={this.state.btnTheme} result={this.state.result}></Output>
                 </div>
                 <div className="childElements">
-
                     <button className={this.state.btnTheme} name="1" onClick={this.clickItem}>1</button>
                     <button className={this.state.btnTheme} name="2" onClick={this.clickItem}>2</button>
                     <button className={this.state.btnTheme} name="3" onClick={this.clickItem}>3</button>
@@ -171,7 +168,6 @@ class CalcMainPage extends Component {
                     <button className={this.state.btnTheme} onClick={this.changeToDarkMode}>Dark Mode</button>
                     <button className={this.state.btnTheme} onClick={this.onPressScientificBtn}>Scientific</button>
                 </div>
-
             </div>
         )
     }

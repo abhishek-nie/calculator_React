@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
- 
 }
 
 .outerLayerLightMode{
@@ -20,10 +19,12 @@
     flex-direction: column;
     align-items: center;
 }
+
 .btnChildDarkMode{
     color: #fff;
     background-color: #666;
 }
+
 .btnChildLightMode{
     color:#000;
     background-color:#f0f0f0;
@@ -33,23 +34,23 @@
     padding: 10px;
     margin: 20px;
     display: flex;
- 
     width: 35%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
+
 .childElements > button {
     padding: 10px;
     margin: 10px;
     width: 100px;
     text-align: center;
-
 }
 
 .scientificBtnHide{
     display: none;
 }
+
 .scientificBtnShow{
     display:inherit;
     color:#000;
