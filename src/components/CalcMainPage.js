@@ -76,7 +76,8 @@ class CalcMainPage extends Component {
     changeToDarkMode = () => {
         this.setState({
             classBackGroundTheme: "outerLayerDarkMode",
-            btnTheme: "btnChildDarkMode"
+            btnTheme: "btnChildDarkMode",
+            scientificBtn:"scientificBtnShowDarkMode"
 
         })
     }
@@ -85,7 +86,8 @@ class CalcMainPage extends Component {
     changeToLightMode = () => {
         this.setState({
             classBackGroundTheme: "outerLayerLightMode",
-            btnTheme: "btnChildLightMode"
+            btnTheme: "btnChildLightMode",
+            scientificBtn:"scientificBtnShowLightMode"
         })
     }
 
@@ -131,7 +133,7 @@ class CalcMainPage extends Component {
     //This method helps to hide/Unhide the square-root btn, square btn and sign-btn
     onPressScientificBtn = () => {
         this.setState({
-            scientificBtn: "scientificBtnShow"
+            scientificBtn: "scientificBtnShowLightMode"
         })
     }
 
