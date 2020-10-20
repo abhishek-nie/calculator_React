@@ -23,6 +23,9 @@ class CalcMainPage extends Component {
     }
 
     // This method helps to calulate the inputs and show the intermediate input
+    // lItem: this states the last/current input given by user
+    // str : this helps to create the expression string that is used in eval to find the final result
+    // tempArry : this is temporary array that hold the temporary calculation and pushes the calculted value to aItemsToCalculate array.
     clickItem = e => {
         this.setState({
             aItemsToCalculate: [...this.state.aItemsToCalculate, e.target.name],
